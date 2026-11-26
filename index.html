@@ -1,0 +1,274 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cheam Sokkhim — IT Specialist & Practical Systems Builder</title>
+  <meta name="description" content="Portfolio of Cheam Sokkhim — IT Specialist building practical internal web systems, mobile utilities, and reliable day-to-day business tools." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="nav-wrap">
+    <nav class="container nav">
+      <a href="#top" class="brand">Cheam Sokkhim<span class="dot">.</span></a>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+        <button id="themeToggle" class="icon-btn" type="button" aria-label="Toggle dark mode" title="Toggle dark/light theme">
+          <span id="themeIcon">🌙</span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main id="top">
+    <!-- Hero -->
+    <section class="hero container">
+      <div class="hero-content">
+        <span class="pill">Open to Opportunities</span>
+        <h1>Hi, I'm <span class="accent">Cheam Sokkhim</span></h1>
+        <p class="role">IT Specialist &amp; Practical Systems Builder</p>
+        <p class="lead">
+          I'm not a title-chasing full-stack engineer — I'm a hands-on IT problem solver who builds
+          practical web and mobile applications to automate daily work, replace manual paperwork,
+          and keep business operations running smoothly.
+        </p>
+        <div class="cta-row">
+          <a href="#projects" class="btn btn-primary">View My Projects</a>
+          <a href="https://github.com/khim1999" target="_blank" rel="noopener" class="btn btn-outline">GitHub Profile</a>
+          <button type="button" class="btn btn-ghost" onclick="window.print()">Print / Save PDF</button>
+        </div>
+      </div>
+      <div class="hero-card">
+        <img src="https://avatars.githubusercontent.com/u/192663299?v=4" alt="Cheam Sokkhim" class="avatar" />
+        <div class="quick-stats">
+          <div>
+            <strong>5+</strong>
+            <span>Real-World Systems</span>
+          </div>
+          <div>
+            <strong>Web &amp; Mobile</strong>
+            <span>Laravel &amp; Flutter</span>
+          </div>
+          <div>
+            <strong>End-to-End</strong>
+            <span>Build → Deploy → Maintain</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About / What I Do -->
+    <section id="about" class="section container">
+      <div class="section-head">
+        <h2>What I Do</h2>
+        <p>Bridging everyday IT operations with practical software that teams actually use.</p>
+      </div>
+      <div class="grid-3">
+        <article class="card">
+          <div class="card-icon">🛠️</div>
+          <h3>Internal Web Systems</h3>
+          <p>
+            Build practical CRUD, approval workflow, inventory, and reporting web apps using
+            Laravel, PHP, MySQL, and Bootstrap — complete with role-based permissions, audit logs,
+            and Excel/CSV exports.
+          </p>
+        </article>
+        <article class="card">
+          <div class="card-icon">📱</div>
+          <h3>Mobile &amp; Utility Apps</h3>
+          <p>
+            Create fast, offline-first utility apps with Flutter focused on privacy, clean UI,
+            and solving real everyday document and productivity needs.
+          </p>
+        </article>
+        <article class="card">
+          <div class="card-icon">🖥️</div>
+          <h3>Deployment &amp; IT Operations</h3>
+          <p>
+            Set up and maintain Windows/WAMP servers, MySQL databases, automated nightly backups,
+            scheduled email alerts, and secure role/permission controls.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" class="section container">
+      <div class="section-head row-between">
+        <div>
+          <h2>Selected Projects</h2>
+          <p>A mix of public open-source apps and internal business systems I built and deployed.</p>
+        </div>
+        <div class="filters" role="tablist" aria-label="Filter projects">
+          <button type="button" class="filter-btn active" data-filter="all">All</button>
+          <button type="button" class="filter-btn" data-filter="public">Public</button>
+          <button type="button" class="filter-btn" data-filter="internal">Internal Systems</button>
+        </div>
+      </div>
+
+      <div class="grid-2" id="projectGrid">
+        <!-- Public: PDFix -->
+        <article class="card project-card" data-category="public">
+          <div class="project-top">
+            <span class="badge badge-public">Public • Open Source</span>
+            <span class="lang">Flutter / Dart</span>
+          </div>
+          <h3>PDFix — Offline PDF Powerhouse</h3>
+          <p>
+            All-in-one, 100% on-device PDF utility mobile app built with Flutter. Designed with a
+            privacy-first approach so users can merge, manage, and work with PDFs completely offline
+            without uploading files to external servers.
+          </p>
+          <div class="tags">
+            <span>Flutter</span><span>Dart</span><span>Offline-First</span><span>Mobile</span>
+          </div>
+          <div class="project-footer">
+            <a href="https://github.com/khim1999/pdfix" target="_blank" rel="noopener" class="link-arrow">
+              View on GitHub →
+            </a>
+          </div>
+        </article>
+
+        <!-- Public: Travel Directory -->
+        <article class="card project-card" data-category="public">
+          <div class="project-top">
+            <span class="badge badge-public">Public • Open Source</span>
+            <span class="lang">Laravel / Blade</span>
+          </div>
+          <h3>Travel Directory Web App</h3>
+          <p>
+            Structured travel listing and directory platform built with Laravel and Blade templates,
+            featuring categorized browsing, clean responsive layouts, and database-driven content
+            management.
+          </p>
+          <div class="tags">
+            <span>Laravel</span><span>PHP</span><span>Blade</span><span>MySQL</span>
+          </div>
+          <div class="project-footer">
+            <a href="https://github.com/khim1999/travel-directory" target="_blank" rel="noopener" class="link-arrow">
+              View on GitHub →
+            </a>
+          </div>
+        </article>
+
+        <!-- Internal: Stationery Inventory -->
+        <article class="card project-card" data-category="internal">
+          <div class="project-top">
+            <span class="badge badge-private">Internal System</span>
+            <span class="lang">Laravel / MySQL</span>
+          </div>
+          <h3>Stationery Inventory &amp; Staff Request System</h3>
+          <p>
+            End-to-end internal office supply platform replacing manual paper requests. Includes
+            staff request submission, manager approval workflow, automatic Stock-In linking,
+            low-stock email alerts, Excel/CSV exports, printable pickup slips, audit logs,
+            role-based access, and automated nightly database backups.
+          </p>
+          <div class="tags">
+            <span>Laravel</span><span>MySQL</span><span>RBAC</span><span>Excel/CSV</span><span>Auto Backup</span>
+          </div>
+          <div class="project-footer">
+            <span class="muted-note">Private business system (details available in interview)</span>
+          </div>
+        </article>
+
+        <!-- Internal: Enterprise POS -->
+        <article class="card project-card" data-category="internal">
+          <div class="project-top">
+            <span class="badge badge-private">Internal System</span>
+            <span class="lang">Web App</span>
+          </div>
+          <h3>Enterprise POS &amp; Stock Control</h3>
+          <p>
+            Point-of-sale and inventory management system built for fast daily counter operations,
+            product/category tracking, stock-in management, and operational reporting.
+          </p>
+          <div class="tags">
+            <span>POS</span><span>Inventory</span><span>Reporting</span><span>Web</span>
+          </div>
+          <div class="project-footer">
+            <span class="muted-note">Private business system (details available in interview)</span>
+          </div>
+        </article>
+
+        <!-- Internal: OT System -->
+        <article class="card project-card" data-category="internal">
+          <div class="project-top">
+            <span class="badge badge-private">Internal System</span>
+            <span class="lang">Web App</span>
+          </div>
+          <h3>Overtime (OT) Request &amp; Tracking System</h3>
+          <p>
+            Internal HR/operations web tool for submitting, reviewing, and tracking employee
+            overtime records with clear status history and monthly summaries.
+          </p>
+          <div class="tags">
+            <span>Workflow</span><span>Approvals</span><span>HR Tool</span><span>Web</span>
+          </div>
+          <div class="project-footer">
+            <span class="muted-note">Private business system (details available in interview)</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills" class="section container">
+      <div class="section-head">
+        <h2>Skills &amp; Tools</h2>
+        <p>Technologies I use regularly to build, deploy, and support working systems.</p>
+      </div>
+      <div class="grid-2">
+        <div class="card">
+          <h3>Web &amp; Application</h3>
+          <div class="tags lg">
+            <span>PHP 8</span><span>Laravel</span><span>Blade</span><span>HTML5 / CSS3</span>
+            <span>JavaScript</span><span>Bootstrap 5</span><span>REST APIs</span><span>Flutter / Dart</span>
+          </div>
+        </div>
+        <div class="card">
+          <h3>Database, Server &amp; IT</h3>
+          <div class="tags lg">
+            <span>MySQL</span><span>Apache / WAMP</span><span>Windows Server</span>
+            <span>Automated Backups</span><span>Git &amp; GitHub</span><span>SMTP / Queues</span>
+            <span>Role &amp; Permission Security</span><span>Troubleshooting</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="section container">
+      <div class="card contact-card">
+        <h2>Let's Connect</h2>
+        <p>
+          Looking for someone reliable who understands both IT operations and how to build practical
+          internal systems? Feel free to reach out or check my GitHub.
+        </p>
+        <div class="cta-row center">
+          <a href="https://github.com/khim1999" target="_blank" rel="noopener" class="btn btn-primary">
+            GitHub (@khim1999)
+          </a>
+          <!-- Add your personal email / Telegram / LinkedIn anytime:
+          <a href="mailto:your-personal-email@gmail.com" class="btn btn-outline">Email Me</a>
+          <a href="https://t.me/yourhandle" target="_blank" rel="noopener" class="btn btn-outline">Telegram</a>
+          <a href="https://linkedin.com/in/yourprofile" target="_blank" rel="noopener" class="btn btn-outline">LinkedIn</a>
+          -->
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer container">
+    <p>© <span id="year"></span> Cheam Sokkhim. Built cleanly with HTML, CSS &amp; JS.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
