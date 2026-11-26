@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const root = document.documentElement;
+  const html = document.documentElement;
   const toggle = document.getElementById('themeToggle');
   const iconMoon = document.getElementById('iconMoon');
   const iconSun = document.getElementById('iconSun');
@@ -7,27 +7,26 @@ document.addEventListener('DOMContentLoaded', () => {
   const progress = document.getElementById('scrollProgress');
   if (year) year.textContent = new Date().getFullYear();
 
-  // Theme toggle (defaults to sleek dark mode)
   const saved = localStorage.getItem('portfolio_theme') || 'dark';
   setTheme(saved);
 
   function setTheme(theme) {
-    root.setAttribute('data-theme', theme);
+    html.classList.toggle('dark', theme === 'dark');
     if (iconMoon && iconSun) {
-      iconMoon.style.display = theme === 'dark' ? 'none' : 'block';
-      iconSun.style.display = theme === 'dark' ? 'block' : 'none';
+      iconMoon.classList.toggle('hidden', theme === 'dark');
+      iconSun.classList.toggle('hidden', theme !== 'dark');
     }
   }
 
   if (toggle) {
     toggle.addEventListener('click', () => {
-      const next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      const next = html.classList.contains('dark') ? 'light' : 'dark';
       localStorage.setItem('portfolio_theme', next);
       setTheme(next);
     });
   }
 
-  // Interactive spotlight glow on cards
+  // Spotlight cursor glow
   document.querySelectorAll('.spotlight').forEach(card => {
     card.addEventListener('mousemove', (e) => {
       const r = card.getBoundingClientRect();

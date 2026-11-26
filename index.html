@@ -1,185 +1,215 @@
 <!doctype html>
-<html lang="en" data-theme="dark">
+<html lang="en" class="dark scroll-smooth">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Cheam Sokkhim — IT Officer &amp; Practical Systems Builder</title>
+  <title>Cheam Sokkhim — Information Technology Officer &amp; Systems Builder</title>
   <meta name="description" content="Portfolio of Cheam Sokkhim — Information Technology Officer in Phnom Penh, Cambodia building practical internal web systems and mobile utilities." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500;600&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css?v=5" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+            display: ['Plus Jakarta Sans', 'Inter', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          },
+        },
+      },
+    };
+  </script>
+  <link rel="stylesheet" href="style.css?v=6" />
 </head>
-<body>
-  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+<body class="bg-slate-50 text-slate-900 dark:bg-[#060913] dark:text-slate-100 antialiased selection:bg-indigo-500/30 transition-colors duration-300 overflow-x-hidden">
+  <!-- Reading Progress -->
+  <div id="scrollProgress" class="fixed top-0 left-0 h-[3px] w-0 z-50 bg-gradient-to-r from-indigo-500 via-sky-400 to-cyan-400 transition-[width] duration-75" aria-hidden="true"></div>
+
+  <!-- Background Texture & Aurora -->
   <div class="bg-grid" aria-hidden="true"></div>
-  <div class="bg-aurora" aria-hidden="true">
-    <span class="orb orb-1"></span>
-    <span class="orb orb-2"></span>
+  <div class="fixed inset-0 -z-10 overflow-hidden pointer-events-none" aria-hidden="true">
+    <div class="orb orb-1 bg-indigo-500"></div>
+    <div class="orb orb-2 bg-cyan-400"></div>
   </div>
 
-  <header class="nav-shell">
-    <nav class="nav-pill" aria-label="Primary">
-      <a href="#top" class="brand">
-        <span class="brand-mark">CS</span>
-        <span class="brand-text">Sokkhim</span>
+  <!-- Floating Pill Navbar -->
+  <header class="sticky top-4 z-40 px-4">
+    <nav class="max-w-5xl mx-auto flex items-center justify-between gap-4 px-4 py-2.5 rounded-full bg-white/80 dark:bg-slate-900/75 backdrop-blur-xl border border-slate-200/80 dark:border-slate-800/80 shadow-lg shadow-slate-900/5 dark:shadow-black/30" aria-label="Primary">
+      <a href="#top" class="inline-flex items-center gap-2.5 font-display font-extrabold text-[15px] tracking-tight text-slate-900 dark:text-white shrink-0">
+        <span class="w-8 h-8 rounded-full bg-gradient-to-br from-indigo-500 to-cyan-400 text-white text-xs font-extrabold inline-flex items-center justify-center shadow-md shadow-indigo-500/30">CS</span>
+        <span>Cheam Sokkhim</span>
       </a>
-      <div class="nav-links" id="navLinks">
-        <a href="#about">About</a>
-        <a href="#experience">Experience</a>
-        <a href="#projects">Projects</a>
-        <a href="#education">Education</a>
-        <a href="#contact">Contact</a>
+
+      <div id="navLinks" class="hidden md:flex items-center gap-1">
+        <a href="#about" class="nav-a px-3 py-1.5 rounded-full text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 hover:bg-indigo-500/10 transition">About</a>
+        <a href="#experience" class="nav-a px-3 py-1.5 rounded-full text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 hover:bg-indigo-500/10 transition">Experience</a>
+        <a href="#projects" class="nav-a px-3 py-1.5 rounded-full text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 hover:bg-indigo-500/10 transition">Projects</a>
+        <a href="#skills" class="nav-a px-3 py-1.5 rounded-full text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 hover:bg-indigo-500/10 transition">Skills</a>
+        <a href="#education" class="nav-a px-3 py-1.5 rounded-full text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 hover:bg-indigo-500/10 transition">Education</a>
+        <a href="#contact" class="nav-a px-3 py-1.5 rounded-full text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 hover:bg-indigo-500/10 transition">Contact</a>
       </div>
-      <button id="themeToggle" class="icon-btn" type="button" aria-label="Toggle theme" title="Switch light / dark theme">
-        <svg id="iconMoon" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-        <svg id="iconSun" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+
+      <button id="themeToggle" type="button" aria-label="Toggle theme" title="Switch light / dark theme" class="w-9 h-9 rounded-full border border-slate-200 dark:border-slate-700/80 bg-white dark:bg-slate-800/80 text-slate-700 dark:text-slate-200 inline-flex items-center justify-center hover:border-indigo-500 hover:rotate-12 transition shrink-0">
+        <svg id="iconMoon" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        <svg id="iconSun" class="w-4 h-4 hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
       </button>
     </nav>
   </header>
 
-  <main id="top">
+  <main id="top" class="max-w-5xl mx-auto px-5">
     <!-- Hero -->
-    <section class="hero container">
-      <div class="hero-content reveal">
-        <div class="status-pill">
-          <span class="pulse"></span>
-          <span>Information Technology Officer • Phnom Penh</span>
+    <section class="py-16 md:py-20 grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+      <div class="lg:col-span-7 reveal">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/25 text-emerald-700 dark:text-emerald-400 text-xs font-semibold mb-5">
+          <span class="w-2 h-2 rounded-full bg-emerald-500 pulse-dot"></span>
+          Information Technology Officer • Phnom Penh
         </div>
-        <h1>
+
+        <h1 class="font-display font-extrabold text-4xl sm:text-5xl tracking-tight leading-[1.1] mb-5">
           Building reliable<br />
-          <span class="gradient-text">IT &amp; internal systems</span><br />
-          that teams love using.
+          <span class="bg-gradient-to-r from-indigo-500 via-sky-400 to-cyan-400 bg-clip-text text-transparent">IT &amp; internal systems</span><br />
+          that teams rely on.
         </h1>
-        <p class="lead">
-          I'm <strong>Cheam Sokkhim</strong> — an IT Officer in banking &amp; finance who keeps daily IT
-          infrastructure running smoothly and builds practical web &amp; mobile tools that turn
-          manual paperwork into fast digital workflows.
+
+        <p class="text-slate-600 dark:text-slate-400 text-base sm:text-[17px] leading-relaxed max-w-xl mb-7">
+          I'm <strong class="text-slate-900 dark:text-white font-semibold">Cheam Sokkhim</strong> — an IT Officer in banking &amp; finance who keeps daily IT infrastructure running smoothly and builds practical web &amp; mobile tools that turn manual paperwork into fast digital workflows.
         </p>
-        <div class="cta-row">
-          <a href="#projects" class="btn btn-primary">
+
+        <div class="flex flex-wrap gap-3">
+          <a href="#projects" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl font-semibold text-sm text-white bg-gradient-to-r from-indigo-600 to-sky-500 hover:from-indigo-500 hover:to-sky-400 shadow-lg shadow-indigo-500/25 hover:-translate-y-0.5 transition">
             Explore Work
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
           </a>
-          <button type="button" class="btn btn-outline js-copy" data-copy="cheamsokkhim999@gmail.com">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+          <button type="button" data-copy="cheamsokkhim999@gmail.com" class="js-copy inline-flex items-center gap-2 px-5 py-2.5 rounded-xl font-semibold text-sm bg-white dark:bg-slate-900/80 border border-slate-200 dark:border-slate-800 text-slate-800 dark:text-slate-200 hover:border-indigo-500 hover:text-indigo-600 dark:hover:text-indigo-400 hover:-translate-y-0.5 transition">
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
             <span class="copy-label">Copy Email</span>
           </button>
-          <button type="button" class="btn btn-ghost" onclick="window.print()">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+          <button type="button" onclick="window.print()" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl font-semibold text-sm text-slate-600 dark:text-slate-400 hover:bg-slate-200/60 dark:hover:bg-slate-800/60 hover:text-slate-900 dark:hover:text-white transition">
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
             Print / PDF
           </button>
         </div>
       </div>
 
-      <aside class="hero-card card spotlight reveal">
-        <div class="card-bar">
-          <span class="win-dots"><i></i><i></i><i></i></span>
-          <span class="mono-tag">profile.config</span>
-        </div>
-        <div class="avatar-wrap">
-          <img src="https://avatars.githubusercontent.com/u/192663299?v=4" alt="Cheam Sokkhim" class="avatar" />
-        </div>
-        <h2 class="profile-name">Cheam Sokkhim</h2>
-        <p class="profile-sub">IT Officer • Practical Systems Builder</p>
+      <!-- Profile Bento Card -->
+      <aside class="lg:col-span-5 reveal">
+        <div class="spotlight rounded-2xl bg-white/85 dark:bg-slate-900/75 backdrop-blur-xl border border-slate-200/80 dark:border-slate-800/80 p-6 shadow-xl shadow-slate-900/5 dark:shadow-black/40 text-center">
+          <div class="flex items-center justify-between pb-3.5 mb-5 border-b border-slate-200/80 dark:border-slate-800/80">
+            <span class="inline-flex gap-1.5">
+              <i class="w-2.5 h-2.5 rounded-full bg-rose-400"></i>
+              <i class="w-2.5 h-2.5 rounded-full bg-amber-400"></i>
+              <i class="w-2.5 h-2.5 rounded-full bg-emerald-400"></i>
+            </span>
+            <span class="font-mono text-xs text-slate-500 dark:text-slate-400">profile.config</span>
+          </div>
 
-        <div class="bento-stats">
-          <div class="stat-box">
-            <strong>3+ yrs</strong>
-            <span>IT &amp; Banking</span>
+          <div class="w-28 h-28 mx-auto mb-3.5 p-[3px] rounded-full bg-gradient-to-br from-indigo-500 to-cyan-400 shadow-lg shadow-indigo-500/25">
+            <img src="https://avatars.githubusercontent.com/u/192663299?v=4" alt="Cheam Sokkhim" class="w-full h-full rounded-full object-cover bg-white dark:bg-slate-900" />
           </div>
-          <div class="stat-box">
-            <strong>5+</strong>
-            <span>Apps Built</span>
-          </div>
-          <div class="stat-box">
-            <strong>B.Sc.</strong>
-            <span>Business IT</span>
-          </div>
-        </div>
+          <h2 class="font-display font-bold text-lg text-slate-900 dark:text-white">Cheam Sokkhim</h2>
+          <p class="text-sm text-slate-500 dark:text-slate-400 mb-5">IT Officer • Practical Systems Builder</p>
 
-        <div class="mini-links">
-          <a href="mailto:cheamsokkhim999@gmail.com" title="Email: cheamsokkhim999@gmail.com" aria-label="Email">
-            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-          </a>
-          <a href="https://t.me/+85560554353" target="_blank" rel="noopener" title="Telegram: 060 55 43 53" aria-label="Telegram">
-            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
-          </a>
-          <a href="tel:+85560554353" title="Phone: 060 55 43 53" aria-label="Phone">
-            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-          </a>
-          <a href="https://www.linkedin.com/search/results/all/?keywords=Cheam%20Sokkhim" target="_blank" rel="noopener" title="LinkedIn: Cheam Sokkhim" aria-label="LinkedIn">
-            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-          </a>
-          <a href="https://github.com/khim1999" target="_blank" rel="noopener" title="GitHub: @khim1999" aria-label="GitHub">
-            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-          </a>
+          <div class="grid grid-cols-3 gap-2 mb-5">
+            <div class="rounded-xl bg-slate-100/80 dark:bg-slate-800/60 border border-slate-200/70 dark:border-slate-700/50 py-2.5 px-1.5">
+              <strong class="block font-display font-extrabold text-sm text-slate-900 dark:text-white">3+ yrs</strong>
+              <span class="text-[11px] text-slate-500 dark:text-slate-400">IT &amp; Banking</span>
+            </div>
+            <div class="rounded-xl bg-slate-100/80 dark:bg-slate-800/60 border border-slate-200/70 dark:border-slate-700/50 py-2.5 px-1.5">
+              <strong class="block font-display font-extrabold text-sm text-slate-900 dark:text-white">5+</strong>
+              <span class="text-[11px] text-slate-500 dark:text-slate-400">Apps Built</span>
+            </div>
+            <div class="rounded-xl bg-slate-100/80 dark:bg-slate-800/60 border border-slate-200/70 dark:border-slate-700/50 py-2.5 px-1.5">
+              <strong class="block font-display font-extrabold text-sm text-slate-900 dark:text-white">B.Sc.</strong>
+              <span class="text-[11px] text-slate-500 dark:text-slate-400">Business IT</span>
+            </div>
+          </div>
+
+          <div class="flex justify-center gap-2">
+            <a href="mailto:cheamsokkhim999@gmail.com" title="Email: cheamsokkhim999@gmail.com" aria-label="Email" class="w-9 h-9 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-800/80 text-slate-600 dark:text-slate-400 inline-flex items-center justify-center hover:border-indigo-500 hover:text-indigo-500 hover:-translate-y-0.5 transition">
+              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </a>
+            <a href="https://t.me/+85560554353" target="_blank" rel="noopener" title="Telegram: 060 55 43 53" aria-label="Telegram" class="w-9 h-9 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-800/80 text-slate-600 dark:text-slate-400 inline-flex items-center justify-center hover:border-indigo-500 hover:text-indigo-500 hover:-translate-y-0.5 transition">
+              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+            </a>
+            <a href="tel:+85560554353" title="Phone: 060 55 43 53" aria-label="Phone" class="w-9 h-9 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-800/80 text-slate-600 dark:text-slate-400 inline-flex items-center justify-center hover:border-indigo-500 hover:text-indigo-500 hover:-translate-y-0.5 transition">
+              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            </a>
+            <a href="https://www.linkedin.com/search/results/all/?keywords=Cheam%20Sokkhim" target="_blank" rel="noopener" title="LinkedIn: Cheam Sokkhim" aria-label="LinkedIn" class="w-9 h-9 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-800/80 text-slate-600 dark:text-slate-400 inline-flex items-center justify-center hover:border-indigo-500 hover:text-indigo-500 hover:-translate-y-0.5 transition">
+              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            </a>
+            <a href="https://github.com/khim1999" target="_blank" rel="noopener" title="GitHub: @khim1999" aria-label="GitHub" class="w-9 h-9 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-800/80 text-slate-600 dark:text-slate-400 inline-flex items-center justify-center hover:border-indigo-500 hover:text-indigo-500 hover:-translate-y-0.5 transition">
+              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+            </a>
+          </div>
         </div>
       </aside>
     </section>
 
-    <!-- What I Do -->
-    <section id="about" class="section container">
-      <div class="section-head reveal">
-        <span class="eyebrow">01 / Capabilities</span>
-        <h2>What I Do</h2>
-        <p>Combining everyday IT operations with practical software that solves real office bottlenecks.</p>
+    <!-- 01 / What I Do -->
+    <section id="about" class="py-14">
+      <div class="mb-8 reveal">
+        <span class="font-mono text-xs font-semibold uppercase tracking-widest text-indigo-600 dark:text-indigo-400">01 / Capabilities</span>
+        <h2 class="font-display font-bold text-2xl sm:text-3xl tracking-tight mt-1">What I Do</h2>
+        <p class="text-slate-600 dark:text-slate-400 mt-1">Combining everyday IT operations with practical software that solves real office bottlenecks.</p>
       </div>
-      <div class="grid-3">
-        <article class="card spotlight feature-card reveal">
-          <div class="icon-box">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+        <article class="spotlight reveal rounded-2xl bg-white/85 dark:bg-slate-900/70 backdrop-blur-xl border border-slate-200/80 dark:border-slate-800/80 p-6 shadow-md hover:-translate-y-1 hover:border-indigo-500/40 transition">
+          <div class="w-11 h-11 rounded-xl bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 inline-flex items-center justify-center mb-4">
+            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
           </div>
-          <h3>Internal Web Systems</h3>
-          <p>
-            Build practical request, approval, inventory, and reporting web apps with Laravel,
-            PHP, and MySQL — complete with role permissions, audit logs, and Excel/CSV exports.
+          <h3 class="font-display font-bold text-lg mb-2">Internal Web Systems</h3>
+          <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+            Build practical request, approval, inventory, and reporting web apps with Laravel, PHP, and MySQL — complete with role permissions, audit logs, and Excel/CSV exports.
           </p>
         </article>
 
-        <article class="card spotlight feature-card reveal">
-          <div class="icon-box">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+        <article class="spotlight reveal rounded-2xl bg-white/85 dark:bg-slate-900/70 backdrop-blur-xl border border-slate-200/80 dark:border-slate-800/80 p-6 shadow-md hover:-translate-y-1 hover:border-indigo-500/40 transition">
+          <div class="w-11 h-11 rounded-xl bg-sky-500/10 text-sky-600 dark:text-sky-400 inline-flex items-center justify-center mb-4">
+            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
           </div>
-          <h3>Mobile &amp; Utility Apps</h3>
-          <p>
-            Create fast, offline-first utility apps with Flutter focused on privacy, clean UI,
-            and solving real everyday document and productivity needs.
+          <h3 class="font-display font-bold text-lg mb-2">Mobile &amp; Utility Apps</h3>
+          <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+            Create fast, offline-first utility apps with Flutter focused on privacy, clean UI, and solving real everyday document and productivity needs.
           </p>
         </article>
 
-        <article class="card spotlight feature-card reveal">
-          <div class="icon-box">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"/><rect x="2" y="14" width="20" height="8" rx="2" ry="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg>
+        <article class="spotlight reveal rounded-2xl bg-white/85 dark:bg-slate-900/70 backdrop-blur-xl border border-slate-200/80 dark:border-slate-800/80 p-6 shadow-md hover:-translate-y-1 hover:border-indigo-500/40 transition">
+          <div class="w-11 h-11 rounded-xl bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 inline-flex items-center justify-center mb-4">
+            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"/><rect x="2" y="14" width="20" height="8" rx="2" ry="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg>
           </div>
-          <h3>IT Officer &amp; Infrastructure</h3>
-          <p>
-            Manage daily IT support, networks, user accounts, Windows/WAMP servers, MySQL backups,
-            UAT testing, and staff security awareness.
+          <h3 class="font-display font-bold text-lg mb-2">IT Officer &amp; Infrastructure</h3>
+          <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+            Manage daily IT support, networks, user accounts, Windows/WAMP servers, MySQL backups, UAT testing, and staff security awareness.
           </p>
         </article>
       </div>
     </section>
 
-    <!-- Experience -->
-    <section id="experience" class="section container">
-      <div class="section-head reveal">
-        <span class="eyebrow">02 / Career</span>
-        <h2>Experience</h2>
-        <p>Hands-on IT operations, user support, and systems administration in banking &amp; finance.</p>
+    <!-- 02 / Experience -->
+    <section id="experience" class="py-14">
+      <div class="mb-8 reveal">
+        <span class="font-mono text-xs font-semibold uppercase tracking-widest text-indigo-600 dark:text-indigo-400">02 / Career</span>
+        <h2 class="font-display font-bold text-2xl sm:text-3xl tracking-tight mt-1">Experience</h2>
+        <p class="text-slate-600 dark:text-slate-400 mt-1">Hands-on IT operations, user support, and systems administration in banking &amp; finance.</p>
       </div>
-      <div class="timeline">
-        <article class="timeline-item reveal">
-          <div class="timeline-node current" aria-hidden="true"></div>
-          <div class="card spotlight timeline-card">
-            <div class="timeline-head">
+
+      <div class="relative pl-7 space-y-6 timeline-rail">
+        <article class="relative reveal">
+          <span class="absolute -left-7 top-7 w-4 h-4 rounded-full bg-emerald-500 ring-4 ring-slate-50 dark:ring-[#060913] shadow-[0_0_14px_rgba(16,185,129,0.75)]" aria-hidden="true"></span>
+          <div class="spotlight rounded-2xl bg-white/85 dark:bg-slate-900/70 backdrop-blur-xl border border-slate-200/80 dark:border-slate-800/80 p-6 shadow-md hover:-translate-y-0.5 hover:border-indigo-500/40 transition">
+            <div class="flex flex-wrap items-start justify-between gap-2 mb-3">
               <div>
-                <h3>Information Technology Officer</h3>
-                <p class="org">Toyota Tsusho Finance (Cambodia) Plc.</p>
+                <h3 class="font-display font-bold text-lg">Information Technology Officer</h3>
+                <p class="text-sm font-semibold text-indigo-600 dark:text-indigo-400">Toyota Tsusho Finance (Cambodia) Plc.</p>
               </div>
-              <span class="badge badge-public">Jul 2025 – Present</span>
+              <span class="px-3 py-1 rounded-full text-xs font-semibold bg-emerald-500/15 text-emerald-700 dark:text-emerald-400">Jul 2025 – Present</span>
             </div>
-            <ul class="bullet-list">
+            <ul class="list-disc pl-5 space-y-1.5 text-sm text-slate-600 dark:text-slate-400">
               <li>Provide IT support and troubleshoot hardware, software, network, and system-related issues.</li>
               <li>Develop and maintain company websites and internal web-based systems to support business operations.</li>
               <li>Manage and maintain IT infrastructure, including network connectivity, servers, and user access.</li>
@@ -191,17 +221,17 @@
           </div>
         </article>
 
-        <article class="timeline-item reveal">
-          <div class="timeline-node" aria-hidden="true"></div>
-          <div class="card spotlight timeline-card">
-            <div class="timeline-head">
+        <article class="relative reveal">
+          <span class="absolute -left-7 top-7 w-4 h-4 rounded-full bg-white dark:bg-slate-900 border-[3px] border-indigo-500 ring-4 ring-slate-50 dark:ring-[#060913]" aria-hidden="true"></span>
+          <div class="spotlight rounded-2xl bg-white/85 dark:bg-slate-900/70 backdrop-blur-xl border border-slate-200/80 dark:border-slate-800/80 p-6 shadow-md hover:-translate-y-0.5 hover:border-indigo-500/40 transition">
+            <div class="flex flex-wrap items-start justify-between gap-2 mb-3">
               <div>
-                <h3>IT Officer</h3>
-                <p class="org">CITY Microfinance Institution Plc.</p>
+                <h3 class="font-display font-bold text-lg">IT Officer</h3>
+                <p class="text-sm font-semibold text-indigo-600 dark:text-indigo-400">CITY Microfinance Institution Plc.</p>
               </div>
-              <span class="badge badge-private">Jul 2024 – Jun 2025</span>
+              <span class="px-3 py-1 rounded-full text-xs font-semibold bg-indigo-500/15 text-indigo-600 dark:text-indigo-400">Jul 2024 – Jun 2025</span>
             </div>
-            <ul class="bullet-list">
+            <ul class="list-disc pl-5 space-y-1.5 text-sm text-slate-600 dark:text-slate-400">
               <li>Prepare and configure PCs for staff onboarding and provide onsite &amp; remote hardware/software support across branches.</li>
               <li>Manage domain user accounts (onboarding &amp; offboarding), Microsoft 365 licenses, and IT inventory/stock control.</li>
               <li>Perform database backups &amp; UAT restores, upload scheduled Consumer CBC data, and monitor user support tickets.</li>
@@ -210,17 +240,17 @@
           </div>
         </article>
 
-        <article class="timeline-item reveal">
-          <div class="timeline-node" aria-hidden="true"></div>
-          <div class="card spotlight timeline-card">
-            <div class="timeline-head">
+        <article class="relative reveal">
+          <span class="absolute -left-7 top-7 w-4 h-4 rounded-full bg-white dark:bg-slate-900 border-[3px] border-indigo-500 ring-4 ring-slate-50 dark:ring-[#060913]" aria-hidden="true"></span>
+          <div class="spotlight rounded-2xl bg-white/85 dark:bg-slate-900/70 backdrop-blur-xl border border-slate-200/80 dark:border-slate-800/80 p-6 shadow-md hover:-translate-y-0.5 hover:border-indigo-500/40 transition">
+            <div class="flex flex-wrap items-start justify-between gap-2 mb-3">
               <div>
-                <h3>IT Technical Support Intern</h3>
-                <p class="org">Prince Bank Plc.</p>
+                <h3 class="font-display font-bold text-lg">IT Technical Support Intern</h3>
+                <p class="text-sm font-semibold text-indigo-600 dark:text-indigo-400">Prince Bank Plc.</p>
               </div>
-              <span class="badge badge-private">Aug 2023 – Jun 2024</span>
+              <span class="px-3 py-1 rounded-full text-xs font-semibold bg-indigo-500/15 text-indigo-600 dark:text-indigo-400">Aug 2023 – Jun 2024</span>
             </div>
-            <ul class="bullet-list">
+            <ul class="list-disc pl-5 space-y-1.5 text-sm text-slate-600 dark:text-slate-400">
               <li>Set up and configured PCs, IP phones, Microsoft 365 licenses, and resolved Outlook archive &amp; software issues.</li>
               <li>Monitored and resolved user support tickets via ORTS and E-Form systems, both remotely and onsite.</li>
               <li>Managed IT stock inventory and delivered weekly issue &amp; status reports to management.</li>
@@ -230,256 +260,253 @@
       </div>
     </section>
 
-    <!-- Projects -->
-    <section id="projects" class="section container">
-      <div class="section-head row-between reveal">
+    <!-- 03 / Projects -->
+    <section id="projects" class="py-14">
+      <div class="flex flex-wrap items-end justify-between gap-4 mb-8 reveal">
         <div>
-          <span class="eyebrow">03 / Work</span>
-          <h2>Selected Projects</h2>
-          <p>Open-source apps and internal business systems I built and deployed.</p>
+          <span class="font-mono text-xs font-semibold uppercase tracking-widest text-indigo-600 dark:text-indigo-400">03 / Work</span>
+          <h2 class="font-display font-bold text-2xl sm:text-3xl tracking-tight mt-1">Selected Projects</h2>
+          <p class="text-slate-600 dark:text-slate-400 mt-1">Open-source apps and internal business systems I built and deployed.</p>
         </div>
-        <div class="filters" role="tablist" aria-label="Filter projects">
-          <button type="button" class="filter-btn active" data-filter="all">All</button>
-          <button type="button" class="filter-btn" data-filter="public">Public</button>
-          <button type="button" class="filter-btn" data-filter="internal">Internal Systems</button>
+        <div class="inline-flex p-1 rounded-full bg-slate-200/70 dark:bg-slate-800/70 border border-slate-200 dark:border-slate-700/70" role="tablist">
+          <button type="button" class="filter-btn active px-4 py-1.5 rounded-full text-xs font-semibold transition" data-filter="all">All</button>
+          <button type="button" class="filter-btn px-4 py-1.5 rounded-full text-xs font-semibold transition" data-filter="public">Public</button>
+          <button type="button" class="filter-btn px-4 py-1.5 rounded-full text-xs font-semibold transition" data-filter="internal">Internal Systems</button>
         </div>
       </div>
 
-      <div class="grid-2" id="projectGrid">
-        <article class="card spotlight project-card reveal" data-category="public">
-          <div class="project-top">
-            <span class="proj-num">01</span>
-            <span class="badge badge-public">Open Source</span>
-            <span class="lang">Flutter / Dart</span>
+      <div id="projectGrid" class="grid grid-cols-1 md:grid-cols-2 gap-5">
+        <article class="project-card spotlight reveal flex flex-col gap-3 rounded-2xl bg-white/85 dark:bg-slate-900/70 backdrop-blur-xl border border-slate-200/80 dark:border-slate-800/80 p-6 shadow-md hover:-translate-y-1 hover:border-indigo-500/40 transition" data-category="public">
+          <div class="flex items-center gap-2.5">
+            <span class="font-mono text-xs font-semibold text-slate-400">01</span>
+            <span class="px-2.5 py-0.5 rounded-full text-[11px] font-semibold bg-emerald-500/15 text-emerald-700 dark:text-emerald-400">Open Source</span>
+            <span class="ml-auto text-xs font-medium text-slate-500 dark:text-slate-400">Flutter / Dart</span>
           </div>
-          <h3>PDFix — Offline PDF Powerhouse</h3>
-          <p>
-            All-in-one, 100% on-device PDF utility mobile app built with Flutter. Privacy-first
-            design lets users merge, manage, and secure PDFs completely offline with zero cloud uploads.
+          <h3 class="font-display font-bold text-lg">PDFix — Offline PDF Powerhouse</h3>
+          <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+            All-in-one, 100% on-device PDF utility mobile app built with Flutter. Privacy-first design lets users merge, manage, and secure PDFs completely offline with zero cloud uploads.
           </p>
-          <div class="tags">
-            <span>Flutter</span><span>Dart</span><span>Offline-First</span><span>Mobile</span>
+          <div class="flex flex-wrap gap-1.5 pt-1">
+            <span class="tag-pill">Flutter</span><span class="tag-pill">Dart</span><span class="tag-pill">Offline-First</span><span class="tag-pill">Mobile</span>
           </div>
-          <div class="project-footer">
-            <a href="https://github.com/khim1999/pdfix" target="_blank" rel="noopener" class="link-arrow">
+          <div class="mt-auto pt-3 border-t border-slate-200/80 dark:border-slate-800/80">
+            <a href="https://github.com/khim1999/pdfix" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 text-sm font-semibold text-indigo-600 dark:text-indigo-400 hover:underline">
               View on GitHub
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
             </a>
           </div>
         </article>
 
-        <article class="card spotlight project-card reveal" data-category="public">
-          <div class="project-top">
-            <span class="proj-num">02</span>
-            <span class="badge badge-public">Open Source</span>
-            <span class="lang">Laravel / Blade</span>
+        <article class="project-card spotlight reveal flex flex-col gap-3 rounded-2xl bg-white/85 dark:bg-slate-900/70 backdrop-blur-xl border border-slate-200/80 dark:border-slate-800/80 p-6 shadow-md hover:-translate-y-1 hover:border-indigo-500/40 transition" data-category="public">
+          <div class="flex items-center gap-2.5">
+            <span class="font-mono text-xs font-semibold text-slate-400">02</span>
+            <span class="px-2.5 py-0.5 rounded-full text-[11px] font-semibold bg-emerald-500/15 text-emerald-700 dark:text-emerald-400">Open Source</span>
+            <span class="ml-auto text-xs font-medium text-slate-500 dark:text-slate-400">Laravel / Blade</span>
           </div>
-          <h3>Travel Directory Web App</h3>
-          <p>
-            Structured travel listing and directory platform built with Laravel and Blade templates,
-            featuring categorized browsing, clean responsive layouts, and database-driven management.
+          <h3 class="font-display font-bold text-lg">Travel Directory Web App</h3>
+          <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+            Structured travel listing and directory platform built with Laravel and Blade templates, featuring categorized browsing, clean responsive layouts, and database-driven management.
           </p>
-          <div class="tags">
-            <span>Laravel</span><span>PHP</span><span>Blade</span><span>MySQL</span>
+          <div class="flex flex-wrap gap-1.5 pt-1">
+            <span class="tag-pill">Laravel</span><span class="tag-pill">PHP</span><span class="tag-pill">Blade</span><span class="tag-pill">MySQL</span>
           </div>
-          <div class="project-footer">
-            <a href="https://github.com/khim1999/travel-directory" target="_blank" rel="noopener" class="link-arrow">
+          <div class="mt-auto pt-3 border-t border-slate-200/80 dark:border-slate-800/80">
+            <a href="https://github.com/khim1999/travel-directory" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 text-sm font-semibold text-indigo-600 dark:text-indigo-400 hover:underline">
               View on GitHub
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
             </a>
           </div>
         </article>
 
-        <article class="card spotlight project-card reveal" data-category="internal">
-          <div class="project-top">
-            <span class="proj-num">03</span>
-            <span class="badge badge-private">Internal System</span>
-            <span class="lang">Laravel / MySQL</span>
+        <article class="project-card spotlight reveal flex flex-col gap-3 rounded-2xl bg-white/85 dark:bg-slate-900/70 backdrop-blur-xl border border-slate-200/80 dark:border-slate-800/80 p-6 shadow-md hover:-translate-y-1 hover:border-indigo-500/40 transition" data-category="internal">
+          <div class="flex items-center gap-2.5">
+            <span class="font-mono text-xs font-semibold text-slate-400">03</span>
+            <span class="px-2.5 py-0.5 rounded-full text-[11px] font-semibold bg-indigo-500/15 text-indigo-600 dark:text-indigo-400">Internal System</span>
+            <span class="ml-auto text-xs font-medium text-slate-500 dark:text-slate-400">Laravel / MySQL</span>
           </div>
-          <h3>Stationery Inventory &amp; Staff Request System</h3>
-          <p>
-            End-to-end internal supply platform replacing paper forms: staff requests, manager
-            approvals, auto-linked Stock-In, low-stock email alerts, Excel/CSV exports, printable
-            pickup slips, audit logs, role-based access, and automated nightly backups.
+          <h3 class="font-display font-bold text-lg">Stationery Inventory &amp; Staff Request System</h3>
+          <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+            End-to-end internal supply platform replacing paper forms: staff requests, manager approvals, auto-linked Stock-In, low-stock email alerts, Excel/CSV exports, printable pickup slips, audit logs, RBAC, and automated nightly backups.
           </p>
-          <div class="tags">
-            <span>Laravel</span><span>MySQL</span><span>RBAC</span><span>Excel/CSV</span><span>Auto Backup</span>
+          <div class="flex flex-wrap gap-1.5 pt-1">
+            <span class="tag-pill">Laravel</span><span class="tag-pill">MySQL</span><span class="tag-pill">RBAC</span><span class="tag-pill">Excel/CSV</span><span class="tag-pill">Auto Backup</span>
           </div>
-          <div class="project-footer">
-            <span class="muted-note">Private business system — walkthrough available in interview</span>
+          <div class="mt-auto pt-3 border-t border-slate-200/80 dark:border-slate-800/80">
+            <span class="text-xs text-slate-500 dark:text-slate-400">Private business system — walkthrough available in interview</span>
           </div>
         </article>
 
-        <article class="card spotlight project-card reveal" data-category="internal">
-          <div class="project-top">
-            <span class="proj-num">04</span>
-            <span class="badge badge-private">Internal System</span>
-            <span class="lang">Web App</span>
+        <article class="project-card spotlight reveal flex flex-col gap-3 rounded-2xl bg-white/85 dark:bg-slate-900/70 backdrop-blur-xl border border-slate-200/80 dark:border-slate-800/80 p-6 shadow-md hover:-translate-y-1 hover:border-indigo-500/40 transition" data-category="internal">
+          <div class="flex items-center gap-2.5">
+            <span class="font-mono text-xs font-semibold text-slate-400">04</span>
+            <span class="px-2.5 py-0.5 rounded-full text-[11px] font-semibold bg-indigo-500/15 text-indigo-600 dark:text-indigo-400">Internal System</span>
+            <span class="ml-auto text-xs font-medium text-slate-500 dark:text-slate-400">Web App</span>
           </div>
-          <h3>Enterprise POS &amp; Stock Control</h3>
-          <p>
-            Point-of-sale and inventory management system designed for fast daily counter operations,
-            product/category tracking, stock-in control, and operational reporting.
+          <h3 class="font-display font-bold text-lg">Enterprise POS &amp; Stock Control</h3>
+          <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+            Point-of-sale and inventory management system designed for fast daily counter operations, product/category tracking, stock-in control, and operational reporting.
           </p>
-          <div class="tags">
-            <span>POS</span><span>Inventory</span><span>Reporting</span><span>Web</span>
+          <div class="flex flex-wrap gap-1.5 pt-1">
+            <span class="tag-pill">POS</span><span class="tag-pill">Inventory</span><span class="tag-pill">Reporting</span><span class="tag-pill">Web</span>
           </div>
-          <div class="project-footer">
-            <span class="muted-note">Private business system — walkthrough available in interview</span>
+          <div class="mt-auto pt-3 border-t border-slate-200/80 dark:border-slate-800/80">
+            <span class="text-xs text-slate-500 dark:text-slate-400">Private business system — walkthrough available in interview</span>
           </div>
         </article>
 
-        <article class="card spotlight project-card reveal" data-category="internal">
-          <div class="project-top">
-            <span class="proj-num">05</span>
-            <span class="badge badge-private">Internal System</span>
-            <span class="lang">Web App</span>
+        <article class="project-card spotlight reveal flex flex-col gap-3 rounded-2xl bg-white/85 dark:bg-slate-900/70 backdrop-blur-xl border border-slate-200/80 dark:border-slate-800/80 p-6 shadow-md hover:-translate-y-1 hover:border-indigo-500/40 transition" data-category="internal">
+          <div class="flex items-center gap-2.5">
+            <span class="font-mono text-xs font-semibold text-slate-400">05</span>
+            <span class="px-2.5 py-0.5 rounded-full text-[11px] font-semibold bg-indigo-500/15 text-indigo-600 dark:text-indigo-400">Internal System</span>
+            <span class="ml-auto text-xs font-medium text-slate-500 dark:text-slate-400">Web App</span>
           </div>
-          <h3>Overtime (OT) Request &amp; Tracking System</h3>
-          <p>
-            Internal operations web tool for submitting, reviewing, and tracking employee overtime
-            records with clear approval history and monthly summaries.
+          <h3 class="font-display font-bold text-lg">Overtime (OT) Request &amp; Tracking System</h3>
+          <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+            Internal operations web tool for submitting, reviewing, and tracking employee overtime records with clear approval history and monthly summaries.
           </p>
-          <div class="tags">
-            <span>Workflow</span><span>Approvals</span><span>HR Tool</span><span>Web</span>
+          <div class="flex flex-wrap gap-1.5 pt-1">
+            <span class="tag-pill">Workflow</span><span class="tag-pill">Approvals</span><span class="tag-pill">HR Tool</span><span class="tag-pill">Web</span>
           </div>
-          <div class="project-footer">
-            <span class="muted-note">Private business system — walkthrough available in interview</span>
+          <div class="mt-auto pt-3 border-t border-slate-200/80 dark:border-slate-800/80">
+            <span class="text-xs text-slate-500 dark:text-slate-400">Private business system — walkthrough available in interview</span>
           </div>
         </article>
       </div>
     </section>
 
-    <!-- Skills -->
-    <section id="skills" class="section container">
-      <div class="section-head reveal">
-        <span class="eyebrow">04 / Toolkit</span>
-        <h2>Skills &amp; Technologies</h2>
-        <p>Practical tools I use every day to build, deploy, and maintain working systems.</p>
+    <!-- 04 / Skills -->
+    <section id="skills" class="py-14">
+      <div class="mb-8 reveal">
+        <span class="font-mono text-xs font-semibold uppercase tracking-widest text-indigo-600 dark:text-indigo-400">04 / Toolkit</span>
+        <h2 class="font-display font-bold text-2xl sm:text-3xl tracking-tight mt-1">Skills &amp; Technologies</h2>
+        <p class="text-slate-600 dark:text-slate-400 mt-1">Practical tools I use every day to build, deploy, and maintain working systems.</p>
       </div>
-      <div class="grid-2">
-        <div class="card spotlight reveal">
-          <h3>Web &amp; Application</h3>
-          <div class="tags lg">
-            <span>PHP 8</span><span>Laravel</span><span>Blade</span><span>HTML5 / CSS3</span>
-            <span>JavaScript</span><span>Bootstrap 5</span><span>REST APIs</span><span>Flutter / Dart</span>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+        <div class="spotlight reveal rounded-2xl bg-white/85 dark:bg-slate-900/70 backdrop-blur-xl border border-slate-200/80 dark:border-slate-800/80 p-6 shadow-md">
+          <h3 class="font-display font-bold text-lg mb-4">Web &amp; Application</h3>
+          <div class="flex flex-wrap gap-2">
+            <span class="skill-pill">PHP 8</span><span class="skill-pill">Laravel</span><span class="skill-pill">Blade</span>
+            <span class="skill-pill">Tailwind CSS</span><span class="skill-pill">Bootstrap 5</span><span class="skill-pill">JavaScript</span>
+            <span class="skill-pill">REST APIs</span><span class="skill-pill">Flutter / Dart</span>
           </div>
         </div>
-        <div class="card spotlight reveal">
-          <h3>IT Officer, Database &amp; Server</h3>
-          <div class="tags lg">
-            <span>IT Support &amp; Helpdesk</span><span>Windows Server</span><span>MySQL</span>
-            <span>Apache / WAMP</span><span>Networking</span><span>Microsoft 365</span>
-            <span>Automated Backups</span><span>Git &amp; GitHub</span><span>Role &amp; Access Security</span>
+
+        <div class="spotlight reveal rounded-2xl bg-white/85 dark:bg-slate-900/70 backdrop-blur-xl border border-slate-200/80 dark:border-slate-800/80 p-6 shadow-md">
+          <h3 class="font-display font-bold text-lg mb-4">IT Officer, Database &amp; Server</h3>
+          <div class="flex flex-wrap gap-2">
+            <span class="skill-pill">IT Support &amp; Helpdesk</span><span class="skill-pill">Windows Server</span><span class="skill-pill">MySQL</span>
+            <span class="skill-pill">Apache / WAMP</span><span class="skill-pill">Networking</span><span class="skill-pill">Microsoft 365</span>
+            <span class="skill-pill">Automated Backups</span><span class="skill-pill">Git &amp; GitHub</span><span class="skill-pill">Access Security</span>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Education & Languages -->
-    <section id="education" class="section container">
-      <div class="section-head reveal">
-        <span class="eyebrow">05 / Background</span>
-        <h2>Education &amp; Languages</h2>
-        <p>Academic foundation in Business Information Technology.</p>
+    <!-- 05 / Education & Languages -->
+    <section id="education" class="py-14">
+      <div class="mb-8 reveal">
+        <span class="font-mono text-xs font-semibold uppercase tracking-widest text-indigo-600 dark:text-indigo-400">05 / Background</span>
+        <h2 class="font-display font-bold text-2xl sm:text-3xl tracking-tight mt-1">Education &amp; Languages</h2>
+        <p class="text-slate-600 dark:text-slate-400 mt-1">Academic foundation in Business Information Technology.</p>
       </div>
-      <div class="grid-2">
-        <article class="card spotlight reveal">
-          <div class="timeline-head">
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+        <article class="spotlight reveal rounded-2xl bg-white/85 dark:bg-slate-900/70 backdrop-blur-xl border border-slate-200/80 dark:border-slate-800/80 p-6 shadow-md">
+          <div class="flex flex-wrap items-start justify-between gap-2 mb-2">
             <div>
-              <h3>Bachelor's Degree in Business IT</h3>
-              <p class="org">ACLEDA University of Business</p>
+              <h3 class="font-display font-bold text-lg">Bachelor's Degree in Business IT</h3>
+              <p class="text-sm font-semibold text-indigo-600 dark:text-indigo-400">ACLEDA University of Business</p>
             </div>
-            <span class="badge badge-public">Graduated</span>
+            <span class="px-3 py-1 rounded-full text-xs font-semibold bg-emerald-500/15 text-emerald-700 dark:text-emerald-400">Graduated</span>
           </div>
-          <p class="edu-meta">2022 – 2025 • Phnom Penh, Cambodia</p>
+          <p class="text-sm text-slate-500 dark:text-slate-400">2022 – 2025 • Phnom Penh, Cambodia</p>
         </article>
 
-        <article class="card spotlight reveal">
-          <div class="timeline-head">
+        <article class="spotlight reveal rounded-2xl bg-white/85 dark:bg-slate-900/70 backdrop-blur-xl border border-slate-200/80 dark:border-slate-800/80 p-6 shadow-md">
+          <div class="flex flex-wrap items-start justify-between gap-2 mb-3">
             <div>
-              <h3>High School Diploma (BacII)</h3>
-              <p class="org">Hun Sen Prek Sandek High School</p>
+              <h3 class="font-display font-bold text-lg">High School Diploma (BacII)</h3>
+              <p class="text-sm font-semibold text-indigo-600 dark:text-indigo-400">Hun Sen Prek Sandek High School</p>
             </div>
-            <span class="badge badge-private">2021 – 2022</span>
+            <span class="px-3 py-1 rounded-full text-xs font-semibold bg-indigo-500/15 text-indigo-600 dark:text-indigo-400">2021 – 2022</span>
           </div>
-          <div class="lang-row">
-            <span class="lang-label">Languages:</span>
-            <div class="tags">
-              <span>Khmer (Native)</span>
-              <span>English (Working)</span>
-            </div>
+          <div class="flex flex-wrap items-center gap-2 pt-3 border-t border-slate-200/80 dark:border-slate-800/80">
+            <span class="text-xs font-semibold text-slate-500 dark:text-slate-400">Languages:</span>
+            <span class="tag-pill">Khmer (Native)</span>
+            <span class="tag-pill">English (Working)</span>
           </div>
         </article>
       </div>
     </section>
 
-    <!-- Contact -->
-    <section id="contact" class="section container">
-      <div class="section-head reveal">
-        <span class="eyebrow">06 / Contact</span>
-        <h2>Let's Connect</h2>
-        <p>Reach out anytime for IT Officer, systems support, or practical app-building roles.</p>
+    <!-- 06 / Contact -->
+    <section id="contact" class="py-14">
+      <div class="mb-8 reveal">
+        <span class="font-mono text-xs font-semibold uppercase tracking-widest text-indigo-600 dark:text-indigo-400">06 / Contact</span>
+        <h2 class="font-display font-bold text-2xl sm:text-3xl tracking-tight mt-1">Let's Connect</h2>
+        <p class="text-slate-600 dark:text-slate-400 mt-1">Reach out anytime for IT Officer, systems support, or practical app-building roles.</p>
       </div>
-      <div class="contact-grid">
-        <a href="mailto:cheamsokkhim999@gmail.com" class="card spotlight contact-tile reveal">
-          <div class="icon-box">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <a href="mailto:cheamsokkhim999@gmail.com" class="spotlight reveal flex items-center gap-3.5 p-5 rounded-2xl bg-white/85 dark:bg-slate-900/70 backdrop-blur-xl border border-slate-200/80 dark:border-slate-800/80 shadow-md hover:-translate-y-1 hover:border-indigo-500/40 transition min-w-0">
+          <div class="w-11 h-11 rounded-xl bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 inline-flex items-center justify-center shrink-0">
+            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
           </div>
-          <div>
-            <span class="tile-label">Email</span>
-            <strong>cheamsokkhim999@gmail.com</strong>
+          <div class="min-w-0">
+            <span class="block text-xs text-slate-500 dark:text-slate-400 font-medium">Email</span>
+            <strong class="block text-sm font-semibold text-slate-900 dark:text-white break-all">cheamsokkhim999@gmail.com</strong>
           </div>
         </a>
 
-        <a href="https://t.me/+85560554353" target="_blank" rel="noopener" class="card spotlight contact-tile reveal">
-          <div class="icon-box">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+        <a href="https://t.me/+85560554353" target="_blank" rel="noopener" class="spotlight reveal flex items-center gap-3.5 p-5 rounded-2xl bg-white/85 dark:bg-slate-900/70 backdrop-blur-xl border border-slate-200/80 dark:border-slate-800/80 shadow-md hover:-translate-y-1 hover:border-indigo-500/40 transition min-w-0">
+          <div class="w-11 h-11 rounded-xl bg-sky-500/10 text-sky-600 dark:text-sky-400 inline-flex items-center justify-center shrink-0">
+            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
           </div>
-          <div>
-            <span class="tile-label">Telegram</span>
-            <strong>060 55 43 53</strong>
-          </div>
-        </a>
-
-        <a href="tel:+85560554353" class="card spotlight contact-tile reveal">
-          <div class="icon-box">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-          </div>
-          <div>
-            <span class="tile-label">Phone</span>
-            <strong>060 55 43 53</strong>
+          <div class="min-w-0">
+            <span class="block text-xs text-slate-500 dark:text-slate-400 font-medium">Telegram</span>
+            <strong class="block text-sm font-semibold text-slate-900 dark:text-white">060 55 43 53</strong>
           </div>
         </a>
 
-        <a href="https://www.linkedin.com/search/results/all/?keywords=Cheam%20Sokkhim" target="_blank" rel="noopener" class="card spotlight contact-tile reveal">
-          <div class="icon-box">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        <a href="tel:+85560554353" class="spotlight reveal flex items-center gap-3.5 p-5 rounded-2xl bg-white/85 dark:bg-slate-900/70 backdrop-blur-xl border border-slate-200/80 dark:border-slate-800/80 shadow-md hover:-translate-y-1 hover:border-indigo-500/40 transition min-w-0">
+          <div class="w-11 h-11 rounded-xl bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 inline-flex items-center justify-center shrink-0">
+            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
           </div>
-          <div>
-            <span class="tile-label">LinkedIn</span>
-            <strong>Cheam Sokkhim</strong>
+          <div class="min-w-0">
+            <span class="block text-xs text-slate-500 dark:text-slate-400 font-medium">Phone</span>
+            <strong class="block text-sm font-semibold text-slate-900 dark:text-white">060 55 43 53</strong>
           </div>
         </a>
 
-        <a href="https://github.com/khim1999" target="_blank" rel="noopener" class="card spotlight contact-tile reveal">
-          <div class="icon-box">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+        <a href="https://www.linkedin.com/search/results/all/?keywords=Cheam%20Sokkhim" target="_blank" rel="noopener" class="spotlight reveal flex items-center gap-3.5 p-5 rounded-2xl bg-white/85 dark:bg-slate-900/70 backdrop-blur-xl border border-slate-200/80 dark:border-slate-800/80 shadow-md hover:-translate-y-1 hover:border-indigo-500/40 transition min-w-0">
+          <div class="w-11 h-11 rounded-xl bg-blue-500/10 text-blue-600 dark:text-blue-400 inline-flex items-center justify-center shrink-0">
+            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
           </div>
-          <div>
-            <span class="tile-label">GitHub</span>
-            <strong>@khim1999</strong>
+          <div class="min-w-0">
+            <span class="block text-xs text-slate-500 dark:text-slate-400 font-medium">LinkedIn</span>
+            <strong class="block text-sm font-semibold text-slate-900 dark:text-white">Cheam Sokkhim</strong>
+          </div>
+        </a>
+
+        <a href="https://github.com/khim1999" target="_blank" rel="noopener" class="spotlight reveal flex items-center gap-3.5 p-5 rounded-2xl bg-white/85 dark:bg-slate-900/70 backdrop-blur-xl border border-slate-200/80 dark:border-slate-800/80 shadow-md hover:-translate-y-1 hover:border-indigo-500/40 transition min-w-0">
+          <div class="w-11 h-11 rounded-xl bg-violet-500/10 text-violet-600 dark:text-violet-400 inline-flex items-center justify-center shrink-0">
+            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+          </div>
+          <div class="min-w-0">
+            <span class="block text-xs text-slate-500 dark:text-slate-400 font-medium">GitHub</span>
+            <strong class="block text-sm font-semibold text-slate-900 dark:text-white">@khim1999</strong>
           </div>
         </a>
       </div>
     </section>
   </main>
 
-  <footer class="footer container">
+  <footer class="max-w-5xl mx-auto px-5 py-8 mt-6 border-t border-slate-200/80 dark:border-slate-800/80 flex flex-wrap items-center justify-between gap-3 text-sm text-slate-500 dark:text-slate-400">
     <p>© <span id="year"></span> Cheam Sokkhim. All rights reserved.</p>
-    <a href="#top" class="back-top">Back to top ↑</a>
+    <a href="#top" class="font-medium hover:text-indigo-500 transition">Back to top ↑</a>
   </footer>
 
-  <script src="script.js?v=5"></script>
+  <script src="script.js?v=6"></script>
 </body>
 </html>
