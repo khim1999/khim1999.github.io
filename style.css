@@ -246,8 +246,18 @@ h2 { font-size: clamp(1.5rem, 2.5vw, 1.85rem); margin: 0 0 6px; letter-spacing: 
 .link-arrow:hover { text-decoration: underline; }
 .muted-note { color: var(--muted); font-size: 0.83rem; }
 
+/* Timeline & Education */
+.timeline { display: grid; gap: 18px; }
+.timeline-head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-start; gap: 10px; margin-bottom: 12px; }
+.timeline-head h3 { margin: 0 0 3px; }
+.org { margin: 0; color: var(--accent); font-weight: 600; font-size: 0.9rem; }
+.bullet-list { margin: 0; padding-left: 18px; color: var(--muted); font-size: 0.92rem; display: grid; gap: 6px; }
+.edu-meta { margin: 4px 0 0; color: var(--muted); font-size: 0.9rem; }
+.lang-row { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin-top: 12px; padding-top: 12px; border-top: 1px solid var(--border); }
+.lang-label { font-size: 0.84rem; font-weight: 600; color: var(--muted); }
+
 /* Contact grid */
-.contact-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+.contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; }
 .contact-tile {
   display: flex; align-items: center; gap: 14px; padding: 20px;
   text-decoration: none; color: var(--text);
