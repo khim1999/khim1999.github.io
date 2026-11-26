@@ -1,7 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
   const root = document.documentElement;
   const toggle = document.getElementById('themeToggle');
-  const icon = document.getElementById('themeIcon');
+  const iconMoon = document.getElementById('iconMoon');
+  const iconSun = document.getElementById('iconSun');
   const year = document.getElementById('year');
   if (year) year.textContent = new Date().getFullYear();
 
@@ -11,7 +12,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function setTheme(theme) {
     root.setAttribute('data-theme', theme);
-    if (icon) icon.textContent = theme === 'dark' ? '☀️' : '🌙';
+    if (iconMoon && iconSun) {
+      iconMoon.style.display = theme === 'dark' ? 'none' : 'block';
+      iconSun.style.display = theme === 'dark' ? 'block' : 'none';
+    }
   }
 
   if (toggle) {
@@ -22,7 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Project filter buttons
+  // Project filter tabs
   const buttons = document.querySelectorAll('.filter-btn');
   const cards = document.querySelectorAll('.project-card');
   buttons.forEach(btn => {
@@ -35,4 +39,20 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
   });
+
+  // Subtle scroll-in reveal
+  const reveals = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('in');
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.08 });
+    reveals.forEach(el => io.observe(el));
+  } else {
+    reveals.forEach(el => el.classList.add('in'));
+  }
 });
