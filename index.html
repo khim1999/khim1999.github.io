@@ -1,35 +1,40 @@
 <!doctype html>
-<html lang="en" data-theme="light">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Cheam Sokkhim — IT Officer &amp; Practical Systems Builder</title>
-  <meta name="description" content="Portfolio of Cheam Sokkhim — IT Officer building practical internal web systems, mobile utilities, and reliable day-to-day business tools." />
+  <meta name="description" content="Portfolio of Cheam Sokkhim — Information Technology Officer in Phnom Penh, Cambodia building practical internal web systems and mobile utilities." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css?v=4" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500;600&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css?v=5" />
 </head>
 <body>
-  <div class="bg-glow" aria-hidden="true"></div>
+  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+  <div class="bg-grid" aria-hidden="true"></div>
+  <div class="bg-aurora" aria-hidden="true">
+    <span class="orb orb-1"></span>
+    <span class="orb orb-2"></span>
+  </div>
 
-  <header class="nav-wrap">
-    <nav class="container nav">
+  <header class="nav-shell">
+    <nav class="nav-pill" aria-label="Primary">
       <a href="#top" class="brand">
         <span class="brand-mark">CS</span>
-        <span>Cheam Sokkhim</span>
+        <span class="brand-text">Sokkhim</span>
       </a>
-      <div class="nav-links">
+      <div class="nav-links" id="navLinks">
         <a href="#about">About</a>
         <a href="#experience">Experience</a>
         <a href="#projects">Projects</a>
         <a href="#education">Education</a>
         <a href="#contact">Contact</a>
-        <button id="themeToggle" class="icon-btn" type="button" aria-label="Toggle theme" title="Switch light / dark theme">
-          <svg id="iconMoon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-          <svg id="iconSun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
-        </button>
       </div>
+      <button id="themeToggle" class="icon-btn" type="button" aria-label="Toggle theme" title="Switch light / dark theme">
+        <svg id="iconMoon" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        <svg id="iconSun" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+      </button>
     </nav>
   </header>
 
@@ -37,19 +42,29 @@
     <!-- Hero -->
     <section class="hero container">
       <div class="hero-content reveal">
-        <span class="status-pill"><span class="pulse"></span> Available for IT &amp; Systems Roles</span>
-        <h1>Hi, I'm <span class="gradient-text">Cheam Sokkhim</span></h1>
-        <p class="role">IT Officer &amp; Practical Systems Builder</p>
+        <div class="status-pill">
+          <span class="pulse"></span>
+          <span>Information Technology Officer • Phnom Penh</span>
+        </div>
+        <h1>
+          Building reliable<br />
+          <span class="gradient-text">IT &amp; internal systems</span><br />
+          that teams love using.
+        </h1>
         <p class="lead">
-          I handle day-to-day IT operations, troubleshooting, and server administration — and build
-          practical web and mobile applications that replace manual paperwork with fast, reliable tools.
+          I'm <strong>Cheam Sokkhim</strong> — an IT Officer in banking &amp; finance who keeps daily IT
+          infrastructure running smoothly and builds practical web &amp; mobile tools that turn
+          manual paperwork into fast digital workflows.
         </p>
         <div class="cta-row">
           <a href="#projects" class="btn btn-primary">
-            Explore Projects
+            Explore Work
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
           </a>
-          <a href="#contact" class="btn btn-outline">Contact Me</a>
+          <button type="button" class="btn btn-outline js-copy" data-copy="cheamsokkhim999@gmail.com">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+            <span class="copy-label">Copy Email</span>
+          </button>
           <button type="button" class="btn btn-ghost" onclick="window.print()">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
             Print / PDF
@@ -57,41 +72,47 @@
         </div>
       </div>
 
-      <aside class="hero-card reveal">
+      <aside class="hero-card card spotlight reveal">
+        <div class="card-bar">
+          <span class="win-dots"><i></i><i></i><i></i></span>
+          <span class="mono-tag">profile.config</span>
+        </div>
         <div class="avatar-wrap">
           <img src="https://avatars.githubusercontent.com/u/192663299?v=4" alt="Cheam Sokkhim" class="avatar" />
         </div>
         <h2 class="profile-name">Cheam Sokkhim</h2>
-        <p class="profile-sub">IT Officer • Phnom Penh, Cambodia</p>
-        <div class="quick-stats">
-          <div>
+        <p class="profile-sub">IT Officer • Practical Systems Builder</p>
+
+        <div class="bento-stats">
+          <div class="stat-box">
+            <strong>3+ yrs</strong>
+            <span>IT &amp; Banking</span>
+          </div>
+          <div class="stat-box">
             <strong>5+</strong>
-            <span>Systems Built</span>
+            <span>Apps Built</span>
           </div>
-          <div>
-            <strong>Web &amp; Mobile</strong>
-            <span>Laravel &amp; Flutter</span>
-          </div>
-          <div>
-            <strong>End-to-End</strong>
-            <span>Build → Deploy</span>
+          <div class="stat-box">
+            <strong>B.Sc.</strong>
+            <span>Business IT</span>
           </div>
         </div>
+
         <div class="mini-links">
           <a href="mailto:cheamsokkhim999@gmail.com" title="Email: cheamsokkhim999@gmail.com" aria-label="Email">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
           </a>
           <a href="https://t.me/+85560554353" target="_blank" rel="noopener" title="Telegram: 060 55 43 53" aria-label="Telegram">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
           </a>
           <a href="tel:+85560554353" title="Phone: 060 55 43 53" aria-label="Phone">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
           </a>
           <a href="https://www.linkedin.com/search/results/all/?keywords=Cheam%20Sokkhim" target="_blank" rel="noopener" title="LinkedIn: Cheam Sokkhim" aria-label="LinkedIn">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
           </a>
           <a href="https://github.com/khim1999" target="_blank" rel="noopener" title="GitHub: @khim1999" aria-label="GitHub">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
           </a>
         </div>
       </aside>
@@ -100,12 +121,12 @@
     <!-- What I Do -->
     <section id="about" class="section container">
       <div class="section-head reveal">
-        <span class="eyebrow">Capabilities</span>
+        <span class="eyebrow">01 / Capabilities</span>
         <h2>What I Do</h2>
-        <p>Bridging everyday IT operations with practical software that teams rely on.</p>
+        <p>Combining everyday IT operations with practical software that solves real office bottlenecks.</p>
       </div>
       <div class="grid-3">
-        <article class="card feature-card reveal">
+        <article class="card spotlight feature-card reveal">
           <div class="icon-box">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
           </div>
@@ -116,7 +137,7 @@
           </p>
         </article>
 
-        <article class="card feature-card reveal">
+        <article class="card spotlight feature-card reveal">
           <div class="icon-box">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
           </div>
@@ -127,14 +148,14 @@
           </p>
         </article>
 
-        <article class="card feature-card reveal">
+        <article class="card spotlight feature-card reveal">
           <div class="icon-box">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"/><rect x="2" y="14" width="20" height="8" rx="2" ry="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg>
           </div>
-          <h3>IT Officer &amp; Server Ops</h3>
+          <h3>IT Officer &amp; Infrastructure</h3>
           <p>
-            Manage daily IT support, user accounts, Windows/WAMP servers, MySQL databases,
-            automated nightly backups, scheduled email alerts, and access security.
+            Manage daily IT support, networks, user accounts, Windows/WAMP servers, MySQL backups,
+            UAT testing, and staff security awareness.
           </p>
         </article>
       </div>
@@ -143,59 +164,68 @@
     <!-- Experience -->
     <section id="experience" class="section container">
       <div class="section-head reveal">
-        <span class="eyebrow">Career</span>
+        <span class="eyebrow">02 / Career</span>
         <h2>Experience</h2>
         <p>Hands-on IT operations, user support, and systems administration in banking &amp; finance.</p>
       </div>
       <div class="timeline">
-        <article class="card timeline-card reveal">
-          <div class="timeline-head">
-            <div>
-              <h3>Information Technology Officer</h3>
-              <p class="org">Toyota Tsusho Finance (Cambodia) Plc.</p>
+        <article class="timeline-item reveal">
+          <div class="timeline-node current" aria-hidden="true"></div>
+          <div class="card spotlight timeline-card">
+            <div class="timeline-head">
+              <div>
+                <h3>Information Technology Officer</h3>
+                <p class="org">Toyota Tsusho Finance (Cambodia) Plc.</p>
+              </div>
+              <span class="badge badge-public">Jul 2025 – Present</span>
             </div>
-            <span class="badge badge-public">Jul 2025 – Present</span>
+            <ul class="bullet-list">
+              <li>Provide IT support and troubleshoot hardware, software, network, and system-related issues.</li>
+              <li>Develop and maintain company websites and internal web-based systems to support business operations.</li>
+              <li>Manage and maintain IT infrastructure, including network connectivity, servers, and user access.</li>
+              <li>Monitor and resolve technical issues to ensure smooth and reliable daily operations.</li>
+              <li>Collaborate with different departments to understand requirements and provide effective IT solutions.</li>
+              <li>Support system testing, UAT, implementation, and troubleshooting of internal applications.</li>
+              <li>Continuously learn and apply new technologies to improve IT services and business processes.</li>
+            </ul>
           </div>
-          <ul class="bullet-list">
-            <li>Provide IT support and troubleshoot hardware, software, network, and system-related issues.</li>
-            <li>Develop and maintain company websites and internal web-based systems to support business operations.</li>
-            <li>Manage and maintain IT infrastructure, including network connectivity, servers, and user access.</li>
-            <li>Monitor and resolve technical issues to ensure smooth and reliable daily operations.</li>
-            <li>Collaborate with different departments to understand requirements and provide effective IT solutions.</li>
-            <li>Support system testing, UAT, implementation, and troubleshooting of internal applications.</li>
-            <li>Continuously learn and apply new technologies to improve IT services and business processes.</li>
-          </ul>
         </article>
 
-        <article class="card timeline-card reveal">
-          <div class="timeline-head">
-            <div>
-              <h3>IT Officer</h3>
-              <p class="org">CITY Microfinance Institution Plc.</p>
+        <article class="timeline-item reveal">
+          <div class="timeline-node" aria-hidden="true"></div>
+          <div class="card spotlight timeline-card">
+            <div class="timeline-head">
+              <div>
+                <h3>IT Officer</h3>
+                <p class="org">CITY Microfinance Institution Plc.</p>
+              </div>
+              <span class="badge badge-private">Jul 2024 – Jun 2025</span>
             </div>
-            <span class="badge badge-private">Jul 2024 – Jun 2025</span>
+            <ul class="bullet-list">
+              <li>Prepare and configure PCs for staff onboarding and provide onsite &amp; remote hardware/software support across branches.</li>
+              <li>Manage domain user accounts (onboarding &amp; offboarding), Microsoft 365 licenses, and IT inventory/stock control.</li>
+              <li>Perform database backups &amp; UAT restores, upload scheduled Consumer CBC data, and monitor user support tickets.</li>
+              <li>Conduct IT security awareness training for all staff and new joiners.</li>
+            </ul>
           </div>
-          <ul class="bullet-list">
-            <li>Prepare and configure PCs for staff onboarding and provide onsite &amp; remote hardware/software support across branches.</li>
-            <li>Manage domain user accounts (onboarding &amp; offboarding), Microsoft 365 licenses, and IT inventory/stock control.</li>
-            <li>Perform database backups &amp; UAT restores, upload scheduled Consumer CBC data, and monitor user support tickets.</li>
-            <li>Conduct IT security awareness training for all staff and new joiners.</li>
-          </ul>
         </article>
 
-        <article class="card timeline-card reveal">
-          <div class="timeline-head">
-            <div>
-              <h3>IT Technical Support Intern</h3>
-              <p class="org">Prince Bank Plc.</p>
+        <article class="timeline-item reveal">
+          <div class="timeline-node" aria-hidden="true"></div>
+          <div class="card spotlight timeline-card">
+            <div class="timeline-head">
+              <div>
+                <h3>IT Technical Support Intern</h3>
+                <p class="org">Prince Bank Plc.</p>
+              </div>
+              <span class="badge badge-private">Aug 2023 – Jun 2024</span>
             </div>
-            <span class="badge badge-private">Aug 2023 – Jun 2024</span>
+            <ul class="bullet-list">
+              <li>Set up and configured PCs, IP phones, Microsoft 365 licenses, and resolved Outlook archive &amp; software issues.</li>
+              <li>Monitored and resolved user support tickets via ORTS and E-Form systems, both remotely and onsite.</li>
+              <li>Managed IT stock inventory and delivered weekly issue &amp; status reports to management.</li>
+            </ul>
           </div>
-          <ul class="bullet-list">
-            <li>Set up and configured PCs, IP phones, Microsoft 365 licenses, and resolved Outlook archive &amp; software issues.</li>
-            <li>Monitored and resolved user support tickets via ORTS and E-Form systems, both remotely and onsite.</li>
-            <li>Managed IT stock inventory and delivered weekly issue &amp; status reports to management.</li>
-          </ul>
         </article>
       </div>
     </section>
@@ -204,9 +234,9 @@
     <section id="projects" class="section container">
       <div class="section-head row-between reveal">
         <div>
-          <span class="eyebrow">Work</span>
+          <span class="eyebrow">03 / Work</span>
           <h2>Selected Projects</h2>
-          <p>Public open-source apps alongside internal business systems I built and deployed.</p>
+          <p>Open-source apps and internal business systems I built and deployed.</p>
         </div>
         <div class="filters" role="tablist" aria-label="Filter projects">
           <button type="button" class="filter-btn active" data-filter="all">All</button>
@@ -216,9 +246,9 @@
       </div>
 
       <div class="grid-2" id="projectGrid">
-        <!-- Public: PDFix -->
-        <article class="card project-card reveal" data-category="public">
+        <article class="card spotlight project-card reveal" data-category="public">
           <div class="project-top">
+            <span class="proj-num">01</span>
             <span class="badge badge-public">Open Source</span>
             <span class="lang">Flutter / Dart</span>
           </div>
@@ -238,9 +268,9 @@
           </div>
         </article>
 
-        <!-- Public: Travel Directory -->
-        <article class="card project-card reveal" data-category="public">
+        <article class="card spotlight project-card reveal" data-category="public">
           <div class="project-top">
+            <span class="proj-num">02</span>
             <span class="badge badge-public">Open Source</span>
             <span class="lang">Laravel / Blade</span>
           </div>
@@ -260,9 +290,9 @@
           </div>
         </article>
 
-        <!-- Internal: Stationery Inventory -->
-        <article class="card project-card reveal" data-category="internal">
+        <article class="card spotlight project-card reveal" data-category="internal">
           <div class="project-top">
+            <span class="proj-num">03</span>
             <span class="badge badge-private">Internal System</span>
             <span class="lang">Laravel / MySQL</span>
           </div>
@@ -280,9 +310,9 @@
           </div>
         </article>
 
-        <!-- Internal: Enterprise POS -->
-        <article class="card project-card reveal" data-category="internal">
+        <article class="card spotlight project-card reveal" data-category="internal">
           <div class="project-top">
+            <span class="proj-num">04</span>
             <span class="badge badge-private">Internal System</span>
             <span class="lang">Web App</span>
           </div>
@@ -299,9 +329,9 @@
           </div>
         </article>
 
-        <!-- Internal: OT System -->
-        <article class="card project-card reveal" data-category="internal">
+        <article class="card spotlight project-card reveal" data-category="internal">
           <div class="project-top">
+            <span class="proj-num">05</span>
             <span class="badge badge-private">Internal System</span>
             <span class="lang">Web App</span>
           </div>
@@ -323,24 +353,24 @@
     <!-- Skills -->
     <section id="skills" class="section container">
       <div class="section-head reveal">
-        <span class="eyebrow">Toolkit</span>
+        <span class="eyebrow">04 / Toolkit</span>
         <h2>Skills &amp; Technologies</h2>
         <p>Practical tools I use every day to build, deploy, and maintain working systems.</p>
       </div>
       <div class="grid-2">
-        <div class="card reveal">
+        <div class="card spotlight reveal">
           <h3>Web &amp; Application</h3>
           <div class="tags lg">
             <span>PHP 8</span><span>Laravel</span><span>Blade</span><span>HTML5 / CSS3</span>
             <span>JavaScript</span><span>Bootstrap 5</span><span>REST APIs</span><span>Flutter / Dart</span>
           </div>
         </div>
-        <div class="card reveal">
+        <div class="card spotlight reveal">
           <h3>IT Officer, Database &amp; Server</h3>
           <div class="tags lg">
             <span>IT Support &amp; Helpdesk</span><span>Windows Server</span><span>MySQL</span>
-            <span>Apache / WAMP</span><span>Automated Backups</span><span>Git &amp; GitHub</span>
-            <span>SMTP / Queues</span><span>Role &amp; Permission Security</span><span>Troubleshooting</span>
+            <span>Apache / WAMP</span><span>Networking</span><span>Microsoft 365</span>
+            <span>Automated Backups</span><span>Git &amp; GitHub</span><span>Role &amp; Access Security</span>
           </div>
         </div>
       </div>
@@ -349,12 +379,12 @@
     <!-- Education & Languages -->
     <section id="education" class="section container">
       <div class="section-head reveal">
-        <span class="eyebrow">Background</span>
+        <span class="eyebrow">05 / Background</span>
         <h2>Education &amp; Languages</h2>
         <p>Academic foundation in Business Information Technology.</p>
       </div>
       <div class="grid-2">
-        <article class="card reveal">
+        <article class="card spotlight reveal">
           <div class="timeline-head">
             <div>
               <h3>Bachelor's Degree in Business IT</h3>
@@ -365,7 +395,7 @@
           <p class="edu-meta">2022 – 2025 • Phnom Penh, Cambodia</p>
         </article>
 
-        <article class="card reveal">
+        <article class="card spotlight reveal">
           <div class="timeline-head">
             <div>
               <h3>High School Diploma (BacII)</h3>
@@ -387,12 +417,12 @@
     <!-- Contact -->
     <section id="contact" class="section container">
       <div class="section-head reveal">
-        <span class="eyebrow">Contact</span>
+        <span class="eyebrow">06 / Contact</span>
         <h2>Let's Connect</h2>
         <p>Reach out anytime for IT Officer, systems support, or practical app-building roles.</p>
       </div>
       <div class="contact-grid">
-        <a href="mailto:cheamsokkhim999@gmail.com" class="card contact-tile reveal">
+        <a href="mailto:cheamsokkhim999@gmail.com" class="card spotlight contact-tile reveal">
           <div class="icon-box">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
           </div>
@@ -402,7 +432,7 @@
           </div>
         </a>
 
-        <a href="https://t.me/+85560554353" target="_blank" rel="noopener" class="card contact-tile reveal">
+        <a href="https://t.me/+85560554353" target="_blank" rel="noopener" class="card spotlight contact-tile reveal">
           <div class="icon-box">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
           </div>
@@ -412,7 +442,7 @@
           </div>
         </a>
 
-        <a href="tel:+85560554353" class="card contact-tile reveal">
+        <a href="tel:+85560554353" class="card spotlight contact-tile reveal">
           <div class="icon-box">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
           </div>
@@ -422,7 +452,7 @@
           </div>
         </a>
 
-        <a href="https://www.linkedin.com/search/results/all/?keywords=Cheam%20Sokkhim" target="_blank" rel="noopener" class="card contact-tile reveal">
+        <a href="https://www.linkedin.com/search/results/all/?keywords=Cheam%20Sokkhim" target="_blank" rel="noopener" class="card spotlight contact-tile reveal">
           <div class="icon-box">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
           </div>
@@ -432,7 +462,7 @@
           </div>
         </a>
 
-        <a href="https://github.com/khim1999" target="_blank" rel="noopener" class="card contact-tile reveal">
+        <a href="https://github.com/khim1999" target="_blank" rel="noopener" class="card spotlight contact-tile reveal">
           <div class="icon-box">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
           </div>
@@ -447,8 +477,9 @@
 
   <footer class="footer container">
     <p>© <span id="year"></span> Cheam Sokkhim. All rights reserved.</p>
+    <a href="#top" class="back-top">Back to top ↑</a>
   </footer>
 
-  <script src="script.js?v=3"></script>
+  <script src="script.js?v=5"></script>
 </body>
 </html>
